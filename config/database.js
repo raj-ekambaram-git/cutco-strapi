@@ -4,11 +4,15 @@ module.exports = ({ env }) => ({
     default: {
       connector: 'bookshelf',
       settings: {
-        client: 'sqlite',
-        filename: env('DATABASE_FILENAME', '.tmp/data.db'),
+        client: 'postgres',
+        host: env('DATABASE_HOST', 'strapi-database.cy8miv3pwtux.us-east-2.rds.amazonaws.com'),
+        port: env.int('DATABASE_PORT', 5432),
+        database: env('DATABASE_NAME', 'strapi'),
+        username: env('DATABASE_USERNAME', 'postgres'),
+        password: env('DATABASE_PASSWORD', 'CutcoStrapi123'),
       },
       options: {
-        useNullAsDefault: true,
+        ssl: false,
       },
     },
   },
