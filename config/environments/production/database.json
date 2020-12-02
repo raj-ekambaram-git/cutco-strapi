@@ -12,7 +12,7 @@
         "password": "${process.env.DATABASE_PASSWORD || 'CutcoStrapi123'}"
       },
       "options": {
-        "ssl": false
+        "ssl": false 
       }
     }
   }
