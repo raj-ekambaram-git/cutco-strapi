@@ -1,11 +1,11 @@
 {
-  "provider": "aws-s3",
-  "providerOptions": {
-    "accessKeyId": "",
-    "secretAccessKey": "",
-    "region": "us-east-2",
-    "params": {
-      "Bucket": "cutco-strapi-images"
-    }
-  }
+  "provider": "aws-s3",
+  "providerOptions": {
+    "accessKeyId": "AKIARN4WD42MAKVVVASO",
+    "secretAccessKey": "oaNEvcngP4H7p6X7G+XtO5qSg5wV1GsYSwqRHpTi",
+    "region": "us-east-2",
+    "params": {
+      "Bucket": "cutco-strapi-images"
+    }
+  }
 }
