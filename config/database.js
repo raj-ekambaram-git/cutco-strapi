@@ -7,7 +7,7 @@ module.exports = ({ env }) => ({
         client: 'postgres',
         host: env('DATABASE_HOST', 'cutco-strapi-local.cyppfapaayzp.us-east-2.rds.amazonaws.com'),
         port: env.int('DATABASE_PORT', 5432),
-        database: env('DATABASE_NAME', 'cutcostrapi'),
+        database: env('DATABASE_NAME', 'cutcostrapi_local'),
         username: env('DATABASE_USERNAME', 'postgres'), 
         password: env('DATABASE_PASSWORD', 'CutcoStrapi123'),
       },
