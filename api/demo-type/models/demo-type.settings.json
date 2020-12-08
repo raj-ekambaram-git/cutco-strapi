@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "demo_types",
+  "info": {
+    "name": "DemoType"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "StepName": {
+      "type": "string"
+    },
+    "StepId": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    }
+  }
+}
