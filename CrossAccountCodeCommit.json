@@ -1,0 +1,74 @@
+{
+  "pipeline": {
+     "roleArn": "arn:aws:iam::605841855563:role/service-role/AWSCodePipelineServiceRole-us-east-2-cutco-strapi-pipeline",
+     "stages": [
+        {
+           "name": "Source",
+           "actions": [
+              {
+                "name": "Source",
+                 "actionTypeId": {
+                     "category": "Source",
+                     "owner": "AWS",
+                     "provider": "CodeCommit",
+                     "version": "1"
+               },
+                 "runOrder": 1,
+                 "roleArn": "arn:aws:iam::704668368827:role/CutcoStrapiCodeCommitRole",
+                 "configuration": {
+                     "BranchName": "qa",
+                     "PollForSourceChanges": "true",
+                     "RepositoryName": "cutcoStrapi"
+                  },
+                  "outputArtifacts": [
+                    {
+                      "name": "SourceArtifact"
+                    }
+                  ],
+                  "inputArtifacts": []
+             }
+          ]
+       },
+       {
+           "name": "Build",
+           "actions": [
+             {
+               "inputArtifacts": [
+                {
+                    "name": "SourceArtifact"
+                 }
+               ],
+                "name": "Build",
+                "region": "us-east-2",
+                "namespace": "BuildVariables",
+                "actionTypeId": {
+                    "category": "Build",
+                    "owner": "AWS",
+                    "version": "1",
+                    "provider": "CodeBuild"
+                 },
+                 "outputArtifacts": [
+                    {
+                       "name": "BuildArtifact"
+                    }
+                 ],
+                 "configuration": {
+                    "ProjectName": "cutco-strapi-qa-build"
+                  },
+                  "runOrder": 1
+              }
+           ]
+        }
+      ],
+      "artifactStore": {
+        "type": "S3",
+        "location": "cutco-strapi-codecommit-bucket",
+        "encryptionKey": {
+           "id": "arn:aws:kms:us-east-2:605841855563:key/6dde93cf-2d4f-47ec-ae94-2624c894fe6a",
+           "type": "KMS"
+         }
+       },
+       "name": "cutco-strapi-qa-pipeline",
+       "version": 1
+    }
+}

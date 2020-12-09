@@ -5,9 +5,9 @@ module.exports = ({ env }) => ({
       connector: 'bookshelf',
       settings: {
         client: 'postgres',
-        host: env('DATABASE_HOST', 'cutco-strapi-dev.cyppfapaayzp.us-east-2.rds.amazonaws.com'),
+        host: env('DATABASE_HOST', 'testdb1.cyppfapaayzp.us-east-2.rds.amazonaws.com'),
         port: env.int('DATABASE_PORT', 5432),
-        database: env('DATABASE_NAME', 'cutcostrapi_dev'),
+        database: env('DATABASE_NAME', 'testdb1'),
         username: env('DATABASE_USERNAME', 'postgres'), 
         password: env('DATABASE_PASSWORD', 'CutcoStrapi123'),
       },
