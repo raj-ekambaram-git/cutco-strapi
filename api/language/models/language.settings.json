@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "languages",
+  "info": {
+    "name": "Language"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "languageId": {
+      "type": "uid"
+    },
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "English",
+        "Spanish"
+      ]
+    }
+  }
+}

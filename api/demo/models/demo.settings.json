@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "demos",
+  "info": {
+    "name": "Demo"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "demoId": {
+      "type": "uid"
+    },
+    "language": {
+      "model": "language"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "slides": {
+      "collection": "slide"
+    },
+    "hash": {
+      "type": "biginteger"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "objections",
+  "info": {
+    "name": "Objection"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "objectionId": {
+      "type": "uid"
+    },
+    "question": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "string"
+    }
+  }
+}
